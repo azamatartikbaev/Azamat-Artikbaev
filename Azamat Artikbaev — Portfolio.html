@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Azamat Artikbaev — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f8fc; --grid:#d9e2f2; --ink:#1b2a6b; --text:#27304a; --muted:#5b6785;
+  --hi:#ffe066; --margin:#e5484d; --card:#ffffff; --link:#2446d6;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10162b; --grid:#1d2644; --ink:#dbe4ff; --text:#c3cce6; --muted:#8e9ac0;
+    --hi:#e6c200; --margin:#ff6b70; --card:#172040; --link:#8fa8ff; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10162b; --grid:#1d2644; --ink:#dbe4ff; --text:#c3cce6; --muted:#8e9ac0;
+  --hi:#e6c200; --margin:#ff6b70; --card:#172040; --link:#8fa8ff; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0; background-color:var(--paper); color:var(--text);
+  font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.page{max-width:880px;margin:0 auto;padding:0 20px 0 36px;position:relative}
+.page::before{ /* daftar chetidagi qizil chiziq */
+  content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--margin);opacity:.7
+}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);margin:0;line-height:1.05}
+section{padding:56px 0}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--margin);outline-offset:3px}
+
+/* Hero */
+.hero{padding-top:72px}
+.hero small{display:block;color:var(--muted);font-size:15px;margin-bottom:14px}
+h1{font-size:clamp(44px,11vw,104px);font-weight:800;letter-spacing:-.03em}
+h1 span{display:block}
+.mark{background:linear-gradient(transparent 58%,var(--hi) 58%)}
+.lead{max-width:34em;margin:22px 0 0;font-size:19px}
+.code{
+  margin-top:30px;background:var(--card);border:2px solid var(--ink);border-radius:6px;
+  box-shadow:6px 6px 0 var(--ink);padding:16px 18px;font:500 15px/1.7 ui-monospace,Menlo,Consolas,monospace;
+  color:var(--ink);max-width:460px;min-height:112px;white-space:pre-wrap
+}
+.code i{font-style:normal;color:var(--margin)}
+.caret{display:inline-block;width:8px;height:1em;background:var(--ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{
+  display:inline-block;padding:12px 20px;border:2px solid var(--ink);border-radius:6px;
+  font:500 16px "IBM Plex Sans",sans-serif;text-decoration:none;color:var(--ink);background:var(--card)
+}
+.btn.main{background:var(--hi);color:#1b2a6b}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+
+/* Content */
+h2{font-size:clamp(30px,6vw,44px);font-weight:800;letter-spacing:-.02em;margin-bottom:22px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:8px}
+.fact{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:16px 18px}
+.fact b{display:block;font-family:"Bricolage Grotesque",sans-serif;color:var(--ink);font-size:20px;margin-bottom:4px}
+.fact span{color:var(--muted);font-size:15px}
+.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.skills li{border:2px solid var(--ink);border-radius:999px;padding:6px 16px;background:var(--card);color:var(--ink);font-weight:500}
+.skills li.learn{border-style:dashed}
+.note{color:var(--muted);font-size:15px;margin-top:14px}
+.projects{display:grid;gap:16px}
+.proj{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:18px 20px}
+.proj h3{font-size:22px;margin-bottom:6px}
+.proj p{margin:0;color:var(--muted)}
+.proj.empty{border-style:dashed;background:transparent}
+.contact a.big{
+  display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(26px,6vw,44px);
+  color:var(--ink);text-decoration:none;margin:6px 0;overflow-wrap:anywhere
+}
+.contact a.big:hover{background:var(--hi);color:#1b2a6b}
+footer{padding:30px 0 40px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<section class="hero">
+  <small>Portfolio · Al-Xorazmiy kompyuter sinfi</small>
+  <h1><span>Azamat</span><span class="mark">Artikbaev</span></h1>
+  <p class="lead">Men 8-sinf oʻquvchisiman. Kompyuter bilan ishlashni va yangi narsalarni oʻrganishni yaxshi koʻraman.</p>
+  <div class="code" id="code" aria-label="Salom, dunyo! Men Azamat."><span id="typed"></span><span class="caret"></span></div>
+  <div class="cta">
+    <a class="btn main" href="https://t.me/azamatartikbaev" target="_blank" rel="noopener">Telegramda yozish</a>
+    <a class="btn" href="tel:+998906640813">Qoʻngʻiroq qilish</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Men haqimda</h2>
+  <p style="max-width:36em">Ismim Azamat Artikbaev. Hozir maktabda 8-sinfda oʻqiyman va Al-Xorazmiy kompyuter sinfida kompyuter savodxonligini oʻrganaman. Maqsadim — kompyuterni chuqur bilish va kelajakda dasturchi boʻlish.</p>
+  <div class="facts">
+    <div class="fact"><b>8-sinf</b><span>Maktab oʻquvchisi</span></div>
+    <div class="fact"><b>Al-Xorazmiy</b><span>Kompyuter sinfi</span></div>
+    <div class="fact"><b>Har kuni</b><span>Yangi narsa oʻrganaman</span></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Nimalarni bilaman</h2>
+  <ul class="skills">
+    <li>Kompyuter savodxonligi</li>
+    <li>Internetdan foydalanish</li>
+    <li>Matn va jadval bilan ishlash</li>
+    <li class="learn">HTML va CSS</li>
+    <li class="learn">Dasturlash asoslari</li>
+  </ul>
+  <p class="note">Toʻliq chiziq — biladigan narsalarim. Uzilgan chiziq — hozir oʻrganayotganlarim.</p>
+</section>
+
+<section id="projects">
+  <h2>Loyihalarim</h2>
+  <div class="projects">
+    <div class="proj"><h3>Shu portfolio sayti</h3><p>Oʻzim haqimda yaratilgan birinchi veb-sahifam.</p></div>
+    <div class="proj empty"><h3>Keyingi loyiha</h3><p>Tez orada — yangi loyiha shu yerda paydo boʻladi.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Bogʻlanish</h2>
+  <a class="big" href="https://t.me/azamatartikbaev" target="_blank" rel="noopener">@azamatartikbaev</a>
+  <a class="big" href="tel:+998906640813">+998 90 664 08 13</a>
+  <p class="note">Telegramga yozing yoki qoʻngʻiroq qiling.</p>
+</section>
+
+<footer>© 2026 Azamat Artikbaev</footer>
+</div>
+
+<script>
+(function(){
+  var text = ["print(“Salom, dunyo!”)", "ism = “Azamat”", "sinf = 8", "print(“Men oʻrganyapman”)"].join("\n");
+  var el = document.getElementById("typed");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches){ el.textContent = text; return; }
+  var i = 0;
+  (function tick(){
+    el.textContent = text.slice(0, ++i);
+    if (i < text.length) setTimeout(tick, text[i-1] === "\n" ? 380 : 55);
+  })();
+})();
+</script>
+</body>
+</html>
